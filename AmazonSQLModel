@@ -1,0 +1,41 @@
+SELECT * FROM tblPerson;
+SELECT * FROM tblDepartment;
+
+SELECT Name, Gender, Salary, DepartmentName
+FROM tblPerson
+LEFT JOIN tblDepartment
+ON tblPerson.DepartmentId = tblDepartment.ID
+WHERE tblPerson.DepartmentId IS NOT NULL;
+
+SELECT Name, Gender, Salary, DepartmentName
+FROM tblPerson
+LEFT JOIN tblDepartment
+ON tblPerson.DepartmentId = tblDepartment.ID
+WHERE tblDepartment.ID IS NOT NULL;
+
+SELECT Name, Gender, Salary, DepartmentName
+FROM tblPerson
+RIGHT JOIN tblDepartment
+ON tblPerson.DepartmentId = tblDepartment.ID
+WHERE tblDepartment.ID IS NOT NULL;
+
+SELECT Name, Gender, Salary, DepartmentName
+FROM tblPerson
+RIGHT JOIN tblDepartment
+ON tblPerson.DepartmentId = tblDepartment.ID
+WHERE tblPerson.ID IS NOT NULL;
+
+SELECT Name, Gender, Salary, DepartmentName
+FROM tblPerson
+RIGHT JOIN tblDepartment
+ON tblPerson.DepartmentId = tblDepartment.ID
+WHERE tblPerson.ID IS NOT NULL
+OR tblDepartment.ID IS NOT NULL;
+
+
+SELECT Name, Gender, Salary, DepartmentName
+FROM tblPerson
+FULL JOIN tblDepartment
+ON tblPerson.DepartmentId = tblDepartment.ID
+WHERE tblPerson.ID IS NOT NULL
+OR tblDepartment.ID IS NOT NULL;
